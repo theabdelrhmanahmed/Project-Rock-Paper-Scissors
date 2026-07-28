@@ -26,42 +26,11 @@ const getComputerChoice =function(choice){
 const getRanChoice=getComputerChoice(ranChoice);
 console.log(getRanChoice);
 
+
+
 // Human Choice
 const getHumanChoice= function(humChoice= prompt("Enter your choice: ")){
     return humChoice
 }
 const getHumChoice = getHumanChoice(humChoice);
 console.log(getHumChoice)
-
-let humanScore =0;
-let computerScore=0;
-
-const playRound = function(score1,score2){
-    if(getHumChoice=="rock"&&getRanChoice=="scissor")
-    {
-        humanScore+= ++score1;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }else if(getHumChoice=="rock"&&getRanChoice=="paper"){
-       computerScore+= ++score2;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }else if(getHumChoice=="scissor"&&getRanChoice=="paper"){
-        humanScore+= ++score1;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }
-    else if(getHumChoice=="scissor"&&getRanChoice=="rock"){
-        computerScore+= ++score2;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }else if(getHumChoice=="paper"&&getRanChoice=="rock"){
-        humanScore+= ++score1;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }else if(getHumChoice=="paper"&&getRanChoice=="scissor"){
-        computerScore+= ++score2;
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }else{
-        return `User's score: ${score1}\ncomputer score: ${score2}`
-    }
-
-
-}
-const round= playRound(humanScore,computerScore)
-console.log(round)
