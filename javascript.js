@@ -29,7 +29,7 @@ console.log(getRanChoice);
 
 
 // Human Choice
-const getHumanChoice= function(humChoice= prompt("Enter your choice: ")){
+const getHumanChoice= function(humChoice= prompt("Enter your choice: ").toLowerCase()){
     return humChoice
 }
 const getHumChoice = getHumanChoice(humChoice);
