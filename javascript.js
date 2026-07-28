@@ -34,3 +34,40 @@ const getHumanChoice= function(humChoice= prompt("Enter your choice: ")){
 }
 const getHumChoice = getHumanChoice(humChoice);
 console.log(getHumChoice)
+
+
+// play roun fuction
+
+
+let humanChoice =0;
+let computerChoice=0;
+
+const playRound = function(choice1,choice2){
+    if(getHumChoice=="rock"&&getRanChoice=="scissor")
+    {
+        humanChoice++
+        return `You won! ${getHumChoice} beats ${getRanChoice}`
+    }else if(getHumChoice=="rock"&&getRanChoice=="paper"){
+     computerChoice++;
+       return `Computer won! ${getRanChoice} beats ${getHumChoice}`
+    }else if(getHumChoice=="scissor"&&getRanChoice=="paper"){
+       humanChoice++
+        return `You won! ${getHumChoice} beats ${getRanChoice}`
+    }
+    else if(getHumChoice=="scissor"&&getRanChoice=="rock"){
+         computerChoice++;
+       return `Computer won! ${getRanChoice} beats ${getHumChoice}`
+    }else if(getHumChoice=="paper"&&getRanChoice=="rock"){
+       humanChoice++
+        return `You won! ${getHumChoice} beats ${getRanChoice}`
+    }else if(getHumChoice=="paper"&&getRanChoice=="scissor"){
+        computerChoice++;
+       return `Computer won! ${getRanChoice} beats ${getHumChoice}`
+    }else{
+        return `Same choice`
+    }
+
+
+}
+const round= playRound(humanChoice,computerChoice)
+console.log(round)
