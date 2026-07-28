@@ -6,25 +6,19 @@ Hint: The Math.random method returns a random number that’s greater than or eq
 Note: Some learners might think that arrays are necessary for this problem, but they aren’t.
  If you’re unfamiliar with arrays, don’t worry - they’ll be covered later in the curriculum.
 */
-let ranChoice= "";
-let humChoice;
 const getComputerChoice =function(){
     const comChoice =Math.trunc(Math.random()*3)+1;
     switch (comChoice){
     case 1:
         return "rock";
-        break;
     case 2:
         return "paper";
-        break;
     case 3:
         return "scissor";
-        break;    
         }
     return
 }
-const getRanChoice=getComputerChoice(ranChoice);
-console.log(getRanChoice);
+
 
 
 
@@ -32,8 +26,7 @@ console.log(getRanChoice);
 const getHumanChoice= function(humChoice= prompt("Enter your choice: ").toLowerCase()){
     return humChoice
 }
-const getHumChoice = getHumanChoice(humChoice);
-console.log(getHumChoice)
+
 
 
 // play round fuction
@@ -69,10 +62,32 @@ const playRound = function (humanChoice, computerChoice) {
     return `Computer won! ${computerChoice} beats ${humanChoice}`;
   }
 };
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
 
-console.log(playRound(humanChoice, computerChoice));
 
-console.log(`Human Score: ${humanScore}`);
-console.log(`Computer Score: ${computerScore}`);
+
+
+// play game Functiom 
+const playGame = function () {
+  for (let i = 0; i < 5; i++) {
+    console.log(`Round ${i + 1}`);
+
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    console.log(playRound(humanChoice, computerChoice));
+
+    console.log(`Human Score: ${humanScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+    console.log("--------------------");
+  }
+
+  if (humanScore > computerScore) {
+    console.log("🎉 You won the game!");
+  } else if (computerScore > humanScore) {
+    console.log("💻 Computer won the game!");
+  } else {
+    console.log("🤝 The game is a tie!");
+  }
+};
+
+playGame();
