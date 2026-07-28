@@ -8,20 +8,20 @@ Note: Some learners might think that arrays are necessary for this problem, but 
 */
 let ranChoice= "";
 let humChoice;
-const getComputerChoice =function(choice){
+const getComputerChoice =function(){
     const comChoice =Math.trunc(Math.random()*3)+1;
     switch (comChoice){
     case 1:
-        choice= "rock";
+        return "rock";
         break;
     case 2:
-        choice="paper";
+        return "paper";
         break;
     case 3:
-        choice="scissor";
+        return "scissor";
         break;    
         }
-    return choice
+    return
 }
 const getRanChoice=getComputerChoice(ranChoice);
 console.log(getRanChoice);
@@ -36,7 +36,7 @@ const getHumChoice = getHumanChoice(humChoice);
 console.log(getHumChoice)
 
 
-// play roun fuction
+// play round fuction
 
 
 let humanChoice =0;
